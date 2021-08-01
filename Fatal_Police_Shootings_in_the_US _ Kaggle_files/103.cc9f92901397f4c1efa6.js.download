@@ -1,0 +1,104 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[103],{1121:function(e,t,n){"use strict";n.d(t,"a",(function(){return i})),n.d(t,"b",(function(){return r})),n.d(t,"c",(function(){return a})),n.d(t,"d",(function(){return o})),n.d(t,"e",(function(){return s}));const i=()=>{var e,t,n,i,r,a,o,s,l,c;const u=(()=>{const e=window;return e&&e.Kaggle&&e.Kaggle.Current?e.Kaggle.Current:{}})();return{id:null!==(e=u.userId)&&void 0!==e?e:null,isAdmin:null!==(t=u.isAdmin)&&void 0!==t&&t,isAnonymous:null===(n=u.isAnonymous)||void 0===n||n,userName:null!==(i=u.userName)&&void 0!==i?i:null,displayName:null!==(r=u.userDisplayNameEscaped)&&void 0!==r?r:null,email:null!==(a=u.userEmail)&&void 0!==a?a:null,isPhoneVerified:null!==(o=u.userIsPhoneVerified)&&void 0!==o&&o,profileUrl:null!==(s=u.userProfileUrl)&&void 0!==s?s:null,tier:(null!==(l=u.tier)&&void 0!==l?l:"recalc").toLowerCase(),thumbnailUrl:null!==(c=u.userThumbnailUrl)&&void 0!==c?c:null}},r=()=>i().id,a=()=>i().isAdmin,o=()=>i().isAnonymous,s=()=>i().userName},1149:function(e,t,n){"use strict";n.d(t,"b",(function(){return i})),n.d(t,"a",(function(){return a}));var i,r=n(63);!function(e){e[e.EDIT_PROFILE=0]="EDIT_PROFILE"}(i||(i={}));const a=new r.a},1269:function(e,t,n){"use strict";n.d(t,"a",(function(){return l}));var i=n(2),r=n(6);const a=r.c.Sdk.Users.Protos.HatsLocation,o=r.c.Sdk.Users.Protos.SurveyType,s={"/":a.HOMEPAGE,"/competitions":a.COMPETITIONS,"/datasets":a.DATASETS,"/notebooks":a.NOTEBOOKS,"/code":a.NOTEBOOKS,"/discussion":a.DISCUSSIONS,"/learn/overview":a.COURSES};class l{getHatsLocation(){return s[window.location.pathname]||a.UNSPECIFIED}saveDismissInfo(e,t){return Object(i.__awaiter)(this,void 0,void 0,(function*(){this.getHatsLocation()!==a.UNSPECIFIED&&t!==o.UNSPECIFIED&&(t===o.HATS?yield r.A.hatsService.dismissHats({location:this.getHatsLocation(),userClickedLink:e}):yield r.A.hatsService.dismissSurvey({location:this.getHatsLocation(),userClickedSurvey:e,surveyType:t}))}))}getHatsStatusResponse(){return Object(i.__awaiter)(this,void 0,void 0,(function*(){if(this.getHatsLocation()===a.UNSPECIFIED)return{surveyType:o.UNSPECIFIED};const e=yield r.A.hatsService.getUserHatsStatus({location:this.getHatsLocation()});return e.surveyType=function(e){switch(e){case"hats":return o.HATS;case"dataScienceAndMachineLearningSurvey2020":return o.DATA_SCIENCE_AND_MACHINE_LEARNING_SURVEY_2020}return o.UNSPECIFIED}(e.surveyType),e}))}recordAcceptSurvey(e){return this.saveDismissInfo(!0,e)}recordCancelSurvey(e){return this.saveDismissInfo(!1,e)}getSurveyUrl(e){switch(e){case o.DATA_SCIENCE_AND_MACHINE_LEARNING_SURVEY_2020:return"https://google.qualtrics.com/jfe/form/SV_8vuiBypoM1Xuixf";case o.HATS:default:return"https://google.qualtrics.com/jfe/form/SV_bHF40rH3PQDEJpP"}}}},1369:function(e,t,n){"use strict";n.d(t,"a",(function(){return a}));var i=n(2),r=n(0);const a=r.memo(e=>{const{src:t}=e,n=Object(i.__rest)(e,["src"]),a=t.lastIndexOf("."),o=t.substr(0,a),s=t.substr(a+1),l=`${o}.${s}, ${o}@2x.${s} 2x`,c=Object.assign(Object.assign({},n),{src:t,srcSet:l});return r.createElement("img",Object.assign({},c))})},2324:function(e,t,n){"use strict";var i=n(1),r=n.n(i),a=n(0),o=n(127),s=n(145),l=n(3);const c={light:{background:l.t},dark:{background:l.j}};n.d(t,"a",(function(){return E}));const u=r.a.div`
+  padding: 24px;
+  border-radius: 20px;
+  box-shadow: ${e=>e.theme.material.elevation[2]};
+  max-width: 438px;
+  position: ${e=>e.inline?"relative":"fixed"};
+  bottom: 64px;
+  right: 64px;
+  background-color: ${e=>e.nudgeTheme.background};
+  display: flex;
+  align-items: center;
+  z-index: 10;
+`,d=r()(o.a)`
+  height: 144px;
+  width: 108px;
+  object-fit: cover;
+  margin-right: 16px;
+`,m=r()(s.p)`
+  margin-bottom: 8px;
+`,p=r()(s.c)`
+  margin-bottom: 16px;
+`,g=r.a.div`
+  display: flex;
+  justify-content: flex-end;
+
+  div {
+    margin-left: 8px;
+  }
+`,E=e=>{const{title:t,description:n,inline:r,actions:o,graphic:s}=e,l=a.useContext(i.ThemeContext);return a.createElement(u,{inline:r,nudgeTheme:c[l.name]},a.createElement(d,{graphic:s}),a.createElement("div",null,a.createElement(m,null,t),a.createElement(p,{emphasis:"low"},n),a.createElement(g,null,o)))}},974:function(e,t,n){"use strict";n.r(t);var i=n(2),r=n(1121),a=n(258),o=n(6),s=n(0),l=n(874),c=n(249),u=n(1),d=n.n(u);const m="@media (max-width: 450px)",p=o.c.Sdk.Users.Protos.SurveyType,g=d.a.div`
+  background: ${e=>e.theme.material.color.white};
+  bottom: ${e=>e.theme.material.spacing(5)};
+  box-shadow: ${e=>e.theme.material.elevation[4]};
+  border-radius: ${e=>e.theme.material.borderRadius.normal};
+  display: flex;
+  flex-direction: column;
+  padding: ${e=>e.theme.material.spacing(6)};
+  position: fixed;
+  right: ${e=>e.theme.material.spacing(5)};
+  width: ${e=>e.theme.material.spacing(70)};
+  z-index: ${e=>e.theme.zindex[1e3]};
+
+  ${m} {
+    flex-direction: row;
+    justify-content: space-between;
+    left: ${e=>e.theme.material.spacing(5)};
+    padding: ${e=>{const t=e.theme.material.spacing;return`${t(2)} 0 ${t(2)} ${t(4)}`}};
+    width: auto;
+  }
+
+  /* At extremely small breakpoints, padding is removed to further condense */
+  @media (max-width: 350px) {
+    border-radius: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+`,E=d.a.div`
+  align-items: center;
+  display: flex;
+  font-weight: 500;
+  margin-bottom: ${e=>e.theme.material.spacing(5)};
+
+  ${m} {
+    margin-bottom: 0;
+  }
+`,f=d.a.span`
+  white-space: nowrap;
+
+  ${m} {
+    display: none;
+  }
+`,h=d.a.span`
+  display: none;
+  white-space: nowrap;
+
+  ${m} {
+    display: inline;
+  }
+`,y=d.a.div`
+  align-items: center;
+  display: flex;
+  justify-content: flex-end;
+`,v=d()(l.a)`
+  margin-right: ${e=>e.theme.material.spacing(4)};
+  white-space: nowrap;
+
+  ${m} {
+    display: none;
+  }
+`,S=d()(c.a)`
+  &&& {
+    display: none;
+
+    ${m} {
+      display: flex;
+    }
+  }
+`,T=d.a.a`
+  text-decoration: none;
+  color: inherit;
+`;function N(e){const{surveyType:t,hatsService:n,onAccept:i,onDismiss:r}=e;return t===p.UNSPECIFIED?null:s.createElement(g,null,t===p.DATA_SCIENCE_AND_MACHINE_LEARNING_SURVEY_2020?s.createElement(E,null,"Take the 2020 Kaggle Machine Learning and Data Science Survey and prepare for the upcoming analytics challenge!"):s.createElement(E,null,s.createElement(f,null,"Help us improve Kaggle"),s.createElement(h,null,"Help us improve")),s.createElement(y,null,s.createElement(v,{emphasis:"low",onClick:()=>{n.recordCancelSurvey(t),null==r||r()}},"No thanks"),s.createElement(l.a,{onClick:()=>{n.recordAcceptSurvey(t),null==i||i()}},s.createElement(T,{href:n.getSurveyUrl(t),target:"_blank"},s.createElement(f,null,"Take our Survey"),s.createElement(h,null,"Take Survey"))),s.createElement(S,{icon:"close",onClick:()=>{n.recordCancelSurvey(t),null==r||r()}})))}var w=n(1269),_=n(987);const A=o.c.Sdk.Users.Protos.NudgePage,I=o.c.Sdk.Users.Protos.NudgeReactions,b=o.c.Sdk.Users.Protos.NudgeType,D=o.c.Sdk.Users.Protos.SurveyType,C=new _.a,O=_.b.NUDGE_KEY_COMMUNITY_ALL,x=Object(_.d)(),k=_.b.NUDGE_KEY_COMMUNITY_ALL_SEEN,U=()=>(new Date).getTime(),L=e=>t=>Object.values(e).includes(t),P=L(b),R=L(A),$=e=>{const t=JSON.parse(e);if("number"!=typeof t.timestamp)throw new Error("invalid timestamp");if(!Array.isArray(t.nudges))throw new Error("invalid array");const n=t.nudges.map(e=>{if((e=>"object"==typeof e&&P(e.type)&&R(e.page)&&"number"==typeof e.priority)(e))return e;throw new Error("invalid nudge")});return{timestamp:t.timestamp,nudges:n}},M=()=>{const e=C.read(O);if(null===e)return null;try{const{nudges:t,timestamp:n}=$(e);return U()-n>36e5?null:t}catch(e){return null}},H=e=>{const t=(e=>JSON.stringify({nudges:e.map(e=>({type:e.type,page:e.page,priority:e.priority})),timestamp:U()}))(e);C.write(O,t)},j=()=>{return"1"===C.read(k)};var K=n(2324),F=n(1369),Y=n(1149);const G=d()(F.a)`
+  flex-shrink: 0;
+  margin-right: 16px;
+`,B=e=>{const{fileName:t,alt:n}=e;return s.createElement(G,{src:`/static/images/community/nudges/${t}`,alt:n,width:"108",height:"144"})},V=e=>{const{actText:t,actHref:n,dismissText:i="Dismiss",onAccept:r,onDismiss:a}=e;return s.createElement(s.Fragment,null,s.createElement(l.a,{onClick:a,emphasis:"low"},i),s.createElement(l.a,{onClick:r,href:n,style:{marginLeft:"8px"}},t))},W=e=>{const{nudge:t}=e,[n,r]=s.useState(null);s.useEffect(()=>{(()=>Object(i.__awaiter)(void 0,void 0,void 0,(function*(){var n;if(void 0!==t){const{userNudgeId:i}=yield o.A.nudgeService.showingNudge({type:t});0===i?null===(n=e.onDismiss)||void 0===n||n.call(e):r(i)}})))()},[t]);const a=s.useCallback(()=>{var i;void 0!==t&&null!==n&&(o.A.nudgeService.reactToNudge({nudgeId:n,reaction:I.ACCEPTED}),o.r.report("general","nudge-followed",{nudgeId:n,nudgeType:t})),null===(i=e.onAccept)||void 0===i||i.call(e)},[e.onAccept,n]),l=s.useCallback(()=>{var i;void 0!==t&&null!==n&&(o.A.nudgeService.reactToNudge({nudgeId:n,reaction:I.USER_DISMISSED}),o.r.report("general","nudge-dismissed",{nudgeId:n,nudgeType:t})),null===(i=e.onDismiss)||void 0===i||i.call(e)},[e.onDismiss,n]),c=s.useCallback(()=>{Y.a.trigger({type:Y.b.EDIT_PROFILE}),a()},[a]);if(s.useEffect(()=>{null!==n&&o.r.report("general","nudge-shown",{nudgeId:n,nudgeType:t})},[n,t]),null===n)return null;switch(t){case b.INTRODUCE_YOURSELF:return s.createElement(K.a,{title:"Introduce yourself!",description:"Help the community learn more about you. \n          It will only take a minute or two to complete your Kaggle profile.",graphic:s.createElement(B,{fileName:"employer_nudge_complete.png",alt:"Introduce yourself!"}),actions:s.createElement(V,{actText:"Edit Profile",onAccept:c,onDismiss:l})});case b.PROMOTED:return s.createElement(K.a,{title:"Look good in rankings",description:"You've reached an impressive level,\n          but your details are incomplete. \n          Take two minutes to optimize your profile.",graphic:s.createElement(B,{fileName:"employer_nudge_update.png",alt:"Look good in rankings"}),actions:s.createElement(V,{actText:"Edit Profile",onAccept:c,onDismiss:l})});case b.STILL_WORK_AT:return s.createElement(K.a,{title:"Dust off your profile",description:"You've been on Kaggle over two years!\n          Take a minute or two to make sure your profile is updated.",graphic:s.createElement(B,{fileName:"employer_nudge_update.png",alt:"Dust off your profile"}),actions:s.createElement(V,{actText:"Edit Profile",onAccept:c,onDismiss:l})});case b.GETTING_NOTICED:return s.createElement(K.a,{title:"You’re getting noticed!",description:"The community has discovered your profile.\n          Complete your Kaggle profile to tell them about yourself.",graphic:s.createElement(B,{fileName:"employer_nudge_complete.png",alt:"You’re getting noticed!"}),actions:s.createElement(V,{actText:"Edit Profile",onAccept:c,onDismiss:l})});case b.COMPETITION_EMAIL:return s.createElement(K.a,{title:"Stay up to date with Kaggle Competitions",description:"Subscribe to our email list to hear about new\n          competitions and learn from Kaggle grandmaster workshops\n          and tutorials.",graphic:s.createElement(B,{fileName:"email_nudge.png",alt:"Stay up to date with Kaggle Competitions"}),actions:s.createElement(V,{actText:"Sign Up",onAccept:a,onDismiss:l})});case b.BRAND_NEW:return s.createElement(K.a,{title:"Don't miss a new competition or ML Course",description:"Subscribe to our email list to hear about\n          new ML competitions and courses from Kaggle.",graphic:s.createElement(B,{fileName:"email_nudge.png",alt:"Don't miss a new competition or ML Course"}),actions:s.createElement(V,{actText:"Sign Up",onAccept:a,onDismiss:l})});case b.DATASET_GRAB_AND_GO:return s.createElement(K.a,{title:"Discover more datasets",description:"Sign up for our mailing list to learn about\n          trending datasets, Kaggle news, and updates",graphic:s.createElement(B,{fileName:"email_nudge.png",alt:"Discover more datasets"}),actions:s.createElement(V,{actText:"Sign Up",onAccept:a,onDismiss:l})});case b.NEWLY_RETURNED:return s.createElement(K.a,{title:"Stay up to date with ML",description:"Sign up for our mailing list to learn about\n          newly released ML courses, Kaggle news, and updates.",graphic:s.createElement(B,{fileName:"email_nudge.png",alt:"Stay up to date with ML"}),actions:s.createElement(V,{actText:"Sign Up",onAccept:a,onDismiss:l})});default:return null}};n.d(t,"hatsService",(function(){return z})),n.d(t,"CommunityNudges",(function(){return Q}));const J=new Set(["/competitions","/datasets","/code","/discussion","/learn/overview",""]),z=new w.a,q=(e,t,n)=>{var i;let a=(t=((e,t)=>t.filter(t=>{let n=window.location.pathname;switch(n=n.replace(/\/$/,""),t.page){case A.ANY:return!0;case A.COMPETITIONS:return"CompetitionsApp"===e||"CompetitionContainer"===e;case A.PROFILE:return"ProfileContainerReact"===e&&n===Object(r.a)().profileUrl;case A.LANDING:return J.has(n);default:return!1}}))(e,t)).map(e=>[e.priority,{type:"nudge",message:e.type}]);return n!==D.UNSPECIFIED&&a.push([5,{type:"hats",message:n}]),a.sort((e,t)=>t[0]-e[0]),a.length>0&&"nudge"===(null===(i=a[0][1])||void 0===i?void 0:i.type)&&o.r.report("general","nudge-would-show",{nudgeType:a[0][1].message}),a=a.filter(([e,t])=>"nudge"!==t.type||(e=>{switch(e){case b.INTRODUCE_YOURSELF:case b.GETTING_NOTICED:case b.PROMOTED:case b.STILL_WORK_AT:return o.n.employerNudges;case b.COMPETITION_EMAIL:case b.BRAND_NEW:case b.DATASET_GRAB_AND_GO:case b.NEWLY_RETURNED:return o.n.emailNudges;default:return!1}})(t.message)),0===a.length?null:a[0][1]},Q=e=>{const[t,n]=s.useState(Object(a.a)().pageType),[l,c]=s.useState(null),[u,d]=s.useState(M),[m,p]=s.useState(null),[g,E]=s.useState(j);s.useEffect(()=>{const e=null!==Object(r.b)();e&&null===u&&!g?(()=>Object(i.__awaiter)(void 0,void 0,void 0,(function*(){const e=(yield o.A.nudgeService.checkForNudge({})).potentialNudges;if(null!==e){try{H(e)}catch(e){}d(e)}})))():e||null!==u||d([])},[u,g]),s.useEffect(()=>{g||(()=>Object(i.__awaiter)(void 0,void 0,void 0,(function*(){const e=yield z.getHatsStatusResponse();p(e.surveyType)})))()},[g]),s.useEffect(()=>{return Object(a.c)(e=>{n(e.pageType)})},[]),s.useEffect(()=>{if(null!==t&&null!==u&&null!==m){const e=q(t,u,m);if(null!==e)try{C.write(k,"1")}catch(e){d([])}c(e)}},[t,u,m]);const f=s.useCallback(()=>{E(!0)},[]);return g||null===l?null:"nudge"===l.type&&x?s.createElement(W,{nudge:l.message,onAccept:f,onDismiss:f}):"hats"===l.type?s.createElement(N,{surveyType:l.message,hatsService:z,onAccept:f,onDismiss:f}):null}}}]);
